@@ -28,7 +28,7 @@ module Haml::Filters::CodeRay
     # CodeRay encoder (_default_: `:div`).
     attr_accessor :encoder
 
-    # Coderay encoder options (_default_: `{}`).
+    # CodeRay encoder options (_default_: `{}`).
     attr_accessor :encoder_options
   end
   self.encoder = :div

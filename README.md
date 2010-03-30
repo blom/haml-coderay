@@ -19,7 +19,7 @@ with an exclamation point followed by the language name:
       </foo>
 
 The default encoder and encoder options are `:div` and `{}`,
-repectively, and are accessible through the following variables:
+respectively, and are accessible through the following variables:
 
     Haml::Filters::CodeRay.encoder
     Haml::Filters::CodeRay.encoder_options
