@@ -36,7 +36,7 @@ module Haml::Filters::CodeRay
 
   # @param [String] text text to render
   def render(text)
-    text.sub!(/\A\S*!(\S+)\s+/, '')
+    text.sub!(/\A\s*!(\S+)\s+/, '')
     ::CodeRay.scan(text, $1.downcase.to_sym).
       send(encoder, encoder_options)
   end
