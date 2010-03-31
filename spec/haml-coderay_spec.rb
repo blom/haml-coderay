@@ -1,6 +1,8 @@
 require "rubygems"
 require "lib/haml-coderay"
 
+Haml::Filters::CodeRay.send(:resolve_lazy_requires)
+
 describe Haml::Filters::CodeRay do
   describe :encoder do
     subject { Haml::Filters::CodeRay.encoder }
@@ -10,6 +12,11 @@ describe Haml::Filters::CodeRay do
   describe :encoder_options do
     subject { Haml::Filters::CodeRay.encoder_options }
     specify { should == {} }
+  end
+
+  describe :render, '("!xyz\nfoobar")' do
+    subject { Haml::Filters::CodeRay.render("!xyz\nfoobar") }
+    specify { should include "foobar" }
   end
 end
 
