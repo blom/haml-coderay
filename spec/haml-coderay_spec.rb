@@ -25,14 +25,13 @@ describe Haml::Filters.defined["coderay"], %<["coderay"]> do
 end
 
 describe Haml::Engine do
-  it "should accept :coderay" do
-    Haml::Engine.new(":coderay\n #!xml\n .").
-    render.should be_a String
+  context "valid language specifier" do
+    subject { Haml::Engine.new(":coderay\n #!xml\n .").render }
+    specify { should include "CodeRay" }
   end
 
-  it "should not accept :coderay without language specifier" do
-    lambda {
-      Haml::Engine.new(":coderay\n xml\n .").render
-    }.should raise_exception(NoMethodError, /downcase.*nil/)
+  context "invalid language specifier" do
+    subject { lambda { Haml::Engine.new(":coderay\n xml\n .").render } }
+    specify { should raise_exception(NoMethodError, /downcase.*nil/) }
   end
 end
