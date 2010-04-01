@@ -6,7 +6,7 @@ require "haml"
 # @example Ruby
 #
 #   :coderay
-#     !ruby
+#     #!ruby
 #
 #     if true
 #       puts "hello"
@@ -15,7 +15,7 @@ require "haml"
 # @example XML
 #
 #   :coderay
-#     !xml
+#     #!xml
 #
 #     <foo>
 #       <bar>...</bar>
@@ -36,7 +36,7 @@ module Haml::Filters::CodeRay
 
   # @param [String] text text to render
   def render(text)
-    text.sub!(/\A\s*!(\S+)\s+/, '')
+    text.sub!(/\A\s*#!(\S+)\s+/, '')
     ::CodeRay.scan(text, $1.downcase.to_sym).
       send(encoder, encoder_options)
   end

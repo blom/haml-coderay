@@ -14,8 +14,8 @@ describe Haml::Filters::CodeRay do
     specify { should == {} }
   end
 
-  describe :render, '("!xyz\nfoobar")' do
-    subject { Haml::Filters::CodeRay.render("!xyz\nfoobar") }
+  describe :render, '("#!xyz\nfoobar")' do
+    subject { Haml::Filters::CodeRay.render("#!xyz\nfoobar") }
     specify { should include "foobar" }
   end
 end
@@ -26,7 +26,7 @@ end
 
 describe Haml::Engine do
   it "should accept :coderay" do
-    Haml::Engine.new(":coderay\n !xml\n .").
+    Haml::Engine.new(":coderay\n #!xml\n .").
     render.should be_a String
   end
 

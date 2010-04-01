@@ -2,17 +2,17 @@ haml-coderay
 ============
 
 [CodeRay][1] filter for [Haml][2]. Specify [language][3] to highlight
-with an exclamation point followed by the language name:
+with a shebang followed by the language name:
 
     :coderay
-      !ruby
+      #!ruby
 
       if true
         puts "hello"
       end
 
     :coderay
-      !xml
+      #!xml
 
       <foo>
         <bar>...</bar>
