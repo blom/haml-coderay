@@ -1,7 +1,7 @@
 require "haml"
 
-# CodeRay filter for Haml. Specify language to highlight with an exclamation
-# point followed by the language name.
+# CodeRay filter for Haml. Specify language to highlight with a shebang
+# followed by the language name.
 #
 # @example Ruby
 #
