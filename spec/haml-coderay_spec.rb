@@ -14,20 +14,41 @@ describe Haml::Filters::CodeRay do
     specify { should == {} }
   end
 
-  describe :render, '("#!xyz\nfoobar")' do
-    subject { Haml::Filters::CodeRay.render("#!xyz\nfoobar") }
-    specify { should include "foobar" }
+  describe :render do
+    context 'given "#!xyz\nfoobar\n"' do
+      subject { Haml::Filters::CodeRay.render("#!xyz\nfoobar\n") }
+      specify { should include "foobar\n" }
+    end
+  end
+
+  describe :prepare do
+    context 'given "#!x\ny\n"' do
+      subject { Haml::Filters::CodeRay.prepare("#!x\ny\n") }
+      specify { should == ["y\n", :x] }
+    end
   end
 end
 
-describe Haml::Filters.defined["coderay"], %<["coderay"]> do
-  it { should == Haml::Filters::CodeRay }
+describe Haml::Filters do
+  describe "defined" do
+    subject { Haml::Filters.defined }
+    specify { should include "coderay" }
+  end
+  describe 'defined["coderay"]' do
+    subject { Haml::Filters.defined["coderay"] }
+    specify { should == Haml::Filters::CodeRay }
+  end
 end
 
 describe Haml::Engine do
   context "valid language specifier" do
     subject { Haml::Engine.new(":coderay\n #!xml\n .").render }
-    specify { should include "CodeRay" }
+    specify { should be_a String }
+  end
+
+  context "valid language specifier with nonexistent language" do
+    subject { Haml::Engine.new(":coderay\n #!nonexistent\n .").render }
+    specify { should be_a String }
   end
 
   context "invalid language specifier" do

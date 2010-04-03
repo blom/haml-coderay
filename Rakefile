@@ -1,9 +1,11 @@
-require "rubygems"
-require "rake"
+require "mg"
 require "rake/clean"
-require "yard"
 require "spec/rake/spectask"
+require "yard"
 require "lib/haml-coderay"
+
+MG.new("haml-coderay.gemspec")
+CLOBBER.include(".yardoc", "doc")
 
 task :default => :spec
 
@@ -16,5 +18,3 @@ YARD::Rake::YardocTask.new do |t|
   t.files   = %w(lib/**/*.rb)
   t.options = %w(-mmarkdown -rREADME.md -odoc)
 end
-
-CLOBBER.include(".yardoc", "doc")
