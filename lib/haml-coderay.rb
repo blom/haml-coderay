@@ -19,7 +19,7 @@ module Haml::Filters::CodeRay
   lazy_require "coderay"
 
   defined?(self::VERSION) ||
-    VERSION = "0.0.0".freeze
+    VERSION = "0.0.1".freeze
 
   @encoder         = :div
   @encoder_options = {}
