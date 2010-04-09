@@ -21,8 +21,8 @@ module Haml::Filters::CodeRay
   defined?(self::VERSION) ||
     VERSION = "0.0.1".freeze
 
-  @encoder         = :div
-  @encoder_options = {}
+  @encoder         ||= :div
+  @encoder_options ||= {}
 
   class << self
     # Encoder (_default_: `:div`).
