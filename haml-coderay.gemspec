@@ -2,7 +2,7 @@ require File.expand_path("../lib/haml-coderay", __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name        = "haml-coderay"
-  spec.version     = Haml::Filters::CodeRay::VERSION
+  spec.version     = Haml::Filters::CodeRay::VERSION.dup
   spec.summary     = "CodeRay filter for Haml"
   spec.description = "Adds a CodeRay syntax highlighting filter to Haml"
   spec.files       = Dir.glob("lib/**/*.rb") + %w(LICENSE README.md)
