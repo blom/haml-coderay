@@ -2,7 +2,7 @@ require "mg"
 require "rake/clean"
 require "spec/rake/spectask"
 require "yard"
-require "lib/haml-coderay"
+require File.expand_path("../lib/haml-coderay", __FILE__)
 
 MG.new("haml-coderay.gemspec")
 CLOBBER.include(".yardoc", "doc")

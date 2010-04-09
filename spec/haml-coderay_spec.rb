@@ -1,5 +1,5 @@
 require "rubygems"
-require "lib/haml-coderay"
+require File.expand_path("../../lib/haml-coderay", __FILE__)
 
 Haml::Filters::CodeRay.send(:resolve_lazy_requires)
 
