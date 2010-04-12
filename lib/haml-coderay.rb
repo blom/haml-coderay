@@ -21,20 +21,17 @@ module Haml::Filters::CodeRay
   defined?(self::VERSION) ||
     VERSION = "0.0.1".freeze
 
-  @encoder         ||= :div
-  @encoder_options ||= {}
+  # Encoder (_default_: `:div`).
+  #
+  # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
+  attr_accessor :encoder
+  self.encoder ||= :div
 
-  class << self
-    # Encoder (_default_: `:div`).
-    #
-    # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
-    attr_accessor :encoder
-
-    # Encoder options (_default_: `{}`).
-    #
-    # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
-    attr_accessor :encoder_options
-  end
+  # Encoder options (_default_: `{}`).
+  #
+  # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
+  attr_accessor :encoder_options
+  self.encoder_options ||= {}
 
   # Prepares the text for passing to `::CodeRay.scan`.
   #
