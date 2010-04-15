@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "coderay"
   spec.add_dependency "haml"
 
+  spec.add_development_dependency "bluecloth"
   spec.add_development_dependency "mg"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "yard"

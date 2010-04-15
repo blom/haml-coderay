@@ -1,5 +1,5 @@
 require "rubygems"
-require File.expand_path("../../lib/haml-coderay", __FILE__)
+require "haml-coderay"
 
 Haml::Filters::CodeRay.send(:resolve_lazy_requires)
 
@@ -12,6 +12,32 @@ describe Haml::Filters::CodeRay do
   describe :encoder_options do
     subject { Haml::Filters::CodeRay.encoder_options }
     specify { should == {} }
+  end
+
+  describe :encoder= do
+    before do
+      @old = Haml::Filters::CodeRay.encoder
+      @new = rand
+    end
+    after { Haml::Filters::CodeRay.encoder = @old }
+
+    it "should assign" do
+      Haml::Filters::CodeRay.encoder = @new
+      Haml::Filters::CodeRay.encoder.should == @new
+    end
+  end
+
+  describe :encoder_options= do
+    before do
+      @old = Haml::Filters::CodeRay.encoder_options
+      @new = rand
+    end
+    after { Haml::Filters::CodeRay.encoder_options = @old }
+
+    it "should assign" do
+      Haml::Filters::CodeRay.encoder_options = @new
+      Haml::Filters::CodeRay.encoder_options.should == @new
+    end
   end
 
   describe :render do
