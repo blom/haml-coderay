@@ -15,6 +15,6 @@ Spec::Rake::SpecTask.new :spec do |t|
 end
 
 YARD::Rake::YardocTask.new :yard do |t|
-  t.files   = %w(lib/**/*.rb)
+  t.files   = %w(lib/**/*.rb - LICENSE)
   t.options = %w(-mmarkdown -rREADME.md -odoc)
 end
