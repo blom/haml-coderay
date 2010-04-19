@@ -4,15 +4,9 @@ require "haml-coderay"
 Haml::Filters::CodeRay.send(:resolve_lazy_requires)
 
 describe Haml::Filters::CodeRay do
-  describe :encoder do
-    subject { Haml::Filters::CodeRay.encoder }
-    specify { should == :div }
-  end
-
-  describe :encoder_options do
-    subject { Haml::Filters::CodeRay.encoder_options }
-    specify { should == {} }
-  end
+  subject { Haml::Filters::CodeRay }
+  its(:encoder) { should == :div }
+  its(:encoder_options) { should == {} }
 
   describe :encoder= do
     before do
@@ -56,10 +50,9 @@ describe Haml::Filters::CodeRay do
 end
 
 describe Haml::Filters do
-  describe "defined" do
-    subject { Haml::Filters.defined }
-    specify { should include "coderay" }
-  end
+  subject { Haml::Filters }
+  its(:defined) { should include "coderay" }
+
   describe 'defined["coderay"]' do
     subject { Haml::Filters.defined["coderay"] }
     specify { should == Haml::Filters::CodeRay }
