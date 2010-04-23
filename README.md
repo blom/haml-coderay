@@ -15,7 +15,7 @@ highlight with a shebang followed by the language name:
       end
 
 The default [encoder][4] and encoder options are `:div` and `{}`,
-respectively, and they are accessible as:
+respectively, and they can be altered through:
 
     Haml::Filters::CodeRay.encoder
     Haml::Filters::CodeRay.encoder_options
