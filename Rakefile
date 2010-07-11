@@ -1,3 +1,7 @@
+require "rubygems"
+require "bundler"
+Bundler.setup(:default)
+
 require "mg"
 require "rake/clean"
 require "spec/rake/spectask"
