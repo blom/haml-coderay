@@ -1,7 +1,17 @@
-require "rubygems"
-require "haml-coderay"
+require "spec_helper"
 
 Haml::Filters::CodeRay.send(:resolve_lazy_requires)
+
+describe Haml::Filters::CodeRay, ".included_modules" do
+  subject { Haml::Filters::CodeRay.included_modules }
+  specify { should include Haml::Filters::Base }
+end
+
+describe Haml::Filters::CodeRay, "::VERSION" do
+  let(:version) { Haml::Filters::CodeRay::VERSION }
+  specify { version.should match /\A\d+\.\d+\.\d+\z/ }
+  it("should be frozen") { version.frozen?.should be true }
+end
 
 describe Haml::Filters::CodeRay do
   subject { Haml::Filters::CodeRay }
@@ -9,28 +19,18 @@ describe Haml::Filters::CodeRay do
   its(:encoder_options) { should == {} }
 
   describe :encoder= do
-    before do
-      @old = Haml::Filters::CodeRay.encoder
-      @new = rand
-    end
-    after { Haml::Filters::CodeRay.encoder = @old }
-
     it "should assign" do
-      Haml::Filters::CodeRay.encoder = @new
-      Haml::Filters::CodeRay.encoder.should == @new
+      value = rand
+      Haml::Filters::CodeRay.encoder = value
+      Haml::Filters::CodeRay.encoder.should == value
     end
   end
 
   describe :encoder_options= do
-    before do
-      @old = Haml::Filters::CodeRay.encoder_options
-      @new = rand
-    end
-    after { Haml::Filters::CodeRay.encoder_options = @old }
-
     it "should assign" do
-      Haml::Filters::CodeRay.encoder_options = @new
-      Haml::Filters::CodeRay.encoder_options.should == @new
+      value = rand
+      Haml::Filters::CodeRay.encoder_options = value
+      Haml::Filters::CodeRay.encoder_options.should == value
     end
   end
 
