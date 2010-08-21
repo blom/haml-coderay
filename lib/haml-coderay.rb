@@ -57,7 +57,6 @@ module Haml::Filters::CodeRay_raw
   lazy_require "coderay"
 
   def compile(precompiler, text)
-    precompiler.options[:suppress_eval] = true
     text = Haml::Helpers::find_and_preserve(
       Haml::Filters::CodeRay.render(text).rstrip,
       precompiler.options[:preserve])
