@@ -14,6 +14,8 @@ highlight with a shebang followed by the language name:
         puts "hello"
       end
 
+Use `:coderay_raw` if you want to disable `#{}` interpolation.
+
 The default [encoder][4] and encoder options are `:div` and `{}`,
 respectively, and they can be altered through:
 

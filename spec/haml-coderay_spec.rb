@@ -49,13 +49,27 @@ describe Haml::Filters::CodeRay do
   end
 end
 
+describe Haml::Filters::CodeRay_raw do
+  it 'should act like CodeRay but without the need to escape #{}' do
+    x = Haml::Engine.new(    ":coderay\n #!ruby\n " + 'x \#{ohai2u} y').render
+    y = Haml::Engine.new(":coderay_raw\n #!ruby\n " + "x \#{ohai2u} y").render
+    x.should == y
+  end
+end
+
 describe Haml::Filters do
   subject { Haml::Filters }
   its(:defined) { should include "coderay" }
+  its(:defined) { should include "coderay_raw" }
 
   describe 'defined["coderay"]' do
     subject { Haml::Filters.defined["coderay"] }
     specify { should == Haml::Filters::CodeRay }
+  end
+
+  describe 'defined["coderay_raw"]' do
+    subject { Haml::Filters.defined["coderay_raw"] }
+    specify { should == Haml::Filters::CodeRay_raw }
   end
 end
 

@@ -49,3 +49,18 @@ module Haml::Filters::CodeRay
     ::CodeRay.scan(*prepare(text)).send(encoder, encoder_options)
   end
 end
+
+# {Haml::Filters::CodeRay} without `#{}` interpolation. Use `:coderay_raw`
+# instead of `:coderay`.
+module Haml::Filters::CodeRay_raw
+  include Haml::Filters::Base
+  lazy_require "coderay"
+
+  def compile(precompiler, text)
+    precompiler.options[:suppress_eval] = true
+    text = Haml::Helpers::find_and_preserve(
+      Haml::Filters::CodeRay.render(text).rstrip,
+      precompiler.options[:preserve])
+    precompiler.send(:push_text, text)
+  end
+end
