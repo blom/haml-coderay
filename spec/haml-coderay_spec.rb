@@ -10,7 +10,6 @@ end
 describe Haml::Filters::CodeRay, "::VERSION" do
   let(:version) { Haml::Filters::CodeRay::VERSION }
   specify { version.should match /\A\d+\.\d+\.\d+\z/ }
-  it("should be frozen") { version.frozen?.should be true }
 end
 
 describe Haml::Filters::CodeRay do
