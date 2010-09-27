@@ -1,12 +1,12 @@
 require "rubygems"
 require "haml-coderay"
 
+$HC_ENCODER         ||= Haml::Filters::CodeRay.encoder
+$HC_ENCODER_OPTIONS ||= Haml::Filters::CodeRay.encoder_options
+
 Spec::Runner.configure do |config|
   config.before :each do
-    @@encoder         ||= Haml::Filters::CodeRay.encoder
-    @@encoder_options ||= Haml::Filters::CodeRay.encoder_options
-
-    Haml::Filters::CodeRay.encoder         = @@encoder
-    Haml::Filters::CodeRay.encoder_options = @@encoder_options
+    Haml::Filters::CodeRay.encoder         = $HC_ENCODER
+    Haml::Filters::CodeRay.encoder_options = $HC_ENCODER_OPTIONS
   end
 end
