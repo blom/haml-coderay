@@ -12,7 +12,6 @@ task :default => :spec
 
 Spec::Rake::SpecTask.new :spec do |t|
   t.libs       = %w(lib spec)
-  t.spec_opts << "--color --format nested"
   t.spec_files = FileList["spec/*_spec.rb"]
 end
 
