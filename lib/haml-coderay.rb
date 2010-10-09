@@ -12,6 +12,7 @@ require "haml"
 #       puts "hello"
 #     end
 #
+# @see Haml::Filters::CodeRay_raw
 # @see http://haml-lang.com/docs/yardoc/Haml/Filters.html
 # @see http://coderay.rubychan.de/doc/classes/CodeRay/Scanners.html
 module Haml::Filters::CodeRay
@@ -50,8 +51,18 @@ module Haml::Filters::CodeRay
   end
 end
 
-# {Haml::Filters::CodeRay} without `#{}` interpolation. Use `:coderay_raw`
-# instead of `:coderay`.
+# {Haml::Filters::CodeRay} without `#{}` interpolation.
+#
+# @example Ruby
+#
+#   :coderay_raw
+#     #!ruby
+#
+#     if true
+#       puts "#{hello}"
+#     end
+#
+# @see Haml::Filters::CodeRay
 module Haml::Filters::CodeRay_raw
   include Haml::Filters::Base
   lazy_require "coderay"

@@ -4,8 +4,8 @@ haml-coderay
 * [Homepage](http://github.com/blom/haml-coderay)
 * [Documentation](http://rdoc.info/projects/blom/haml-coderay)
 
-[CodeRay][1] filter for [Haml][2]. Specify which [language][3] to
-highlight with a shebang followed by the language name:
+[CodeRay][1] filter for [Haml][2]. Specify which [language][3] to highlight
+with a shebang followed by the language name:
 
     :coderay
       #!ruby
@@ -16,8 +16,8 @@ highlight with a shebang followed by the language name:
 
 Use `:coderay_raw` if you want to disable `#{}` interpolation.
 
-The default [encoder][4] and encoder options are `:div` and `{}`,
-respectively, and they can be altered through:
+The default [encoder][4] and encoder options are `:div` and `{}`, respectively,
+and they can be altered through:
 
     Haml::Filters::CodeRay.encoder
     Haml::Filters::CodeRay.encoder_options

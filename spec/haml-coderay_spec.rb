@@ -2,20 +2,17 @@ require "spec_helper"
 
 Haml::Filters::CodeRay.send(:resolve_lazy_requires)
 
-describe Haml::Filters::CodeRay, ".included_modules" do
-  subject { Haml::Filters::CodeRay.included_modules }
-  specify { should include Haml::Filters::Base }
-end
-
-describe Haml::Filters::CodeRay, "::VERSION" do
-  let(:version) { Haml::Filters::CodeRay::VERSION }
-  specify { version.should match /\A\d+\.\d+\.\d+\z/ }
-end
-
 describe Haml::Filters::CodeRay do
   subject { Haml::Filters::CodeRay }
+  specify { should include_module Haml::Filters::Base }
+  specify { should lazy_require :coderay }
   its(:encoder) { should == :div }
   its(:encoder_options) { should == {} }
+
+  describe :VERSION do
+    let(:version) { Haml::Filters::CodeRay::VERSION }
+    specify { version.should match /\A\d+\.\d+\.\d+\z/ }
+  end
 
   describe :encoder= do
     it "should assign" do
@@ -49,6 +46,10 @@ describe Haml::Filters::CodeRay do
 end
 
 describe Haml::Filters::CodeRay_raw do
+  subject { Haml::Filters::CodeRay_raw }
+  specify { should include_module Haml::Filters::Base }
+  specify { should lazy_require :coderay }
+
   it 'should act like CodeRay but without the need to escape #{}' do
     x = Haml::Engine.new(    ":coderay\n #!ruby\n " + 'x \#{ohai2u} y').render
     y = Haml::Engine.new(":coderay_raw\n #!ruby\n " + "x \#{ohai2u} y").render
