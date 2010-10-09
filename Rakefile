@@ -13,6 +13,10 @@ task :default => :spec
 Spec::Rake::SpecTask.new :spec do |t|
   t.libs       = %w(lib spec)
   t.spec_files = FileList["spec/*_spec.rb"]
+  if RUBY_VERSION.to_f == 1.8
+    t.rcov      = true
+    t.rcov_opts = %w(-x ^/,spec -t --sort coverage)
+  end
 end
 
 YARD::Rake::YardocTask.new :yard do |t|
