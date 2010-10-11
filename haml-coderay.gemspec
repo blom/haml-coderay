@@ -14,6 +14,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bluecloth"
   spec.add_development_dependency "mg"
   spec.add_development_dependency "rcov"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", "~> 1"
   spec.add_development_dependency "yard"
 end
