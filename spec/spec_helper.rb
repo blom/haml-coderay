@@ -11,14 +11,13 @@ RSpec.configure do |config|
   end
 end
 
-RSpec::Matchers.define :include_module do |expected|
-  match do |filter|
-    filter.included_modules.include?(expected)
+shared_examples_for "haml-coderay filters" do
+  it "should include module Haml::Filters::Base" do
+    subject.included_modules.include?(Haml::Filters::Base).should be true
   end
-end
 
-RSpec::Matchers.define :lazy_require do |expected|
-  match do |filter|
-    filter.instance_variable_get(:@lazy_requires).include?(expected.to_s)
+  it "should lazy_require coderay" do
+    subject.instance_variable_get(:@lazy_requires).include?("coderay").
+    should be true
   end
 end

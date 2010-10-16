@@ -4,8 +4,7 @@ Haml::Filters::CodeRay.send(:resolve_lazy_requires)
 
 describe Haml::Filters::CodeRay do
   subject { Haml::Filters::CodeRay }
-  specify { should include_module Haml::Filters::Base }
-  specify { should lazy_require :coderay }
+  it_should_behave_like "haml-coderay filters"
   its(:encoder) { should == :div }
   its(:encoder_options) { should == {} }
 
@@ -47,8 +46,7 @@ end
 
 describe Haml::Filters::CodeRay_raw do
   subject { Haml::Filters::CodeRay_raw }
-  specify { should include_module Haml::Filters::Base }
-  specify { should lazy_require :coderay }
+  it_should_behave_like "haml-coderay filters"
 
   it 'should act like CodeRay but without the need to escape #{}' do
     x = Haml::Engine.new(    ":coderay\n #!ruby\n " + 'x \#{ohai2u} y').render
