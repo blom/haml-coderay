@@ -2,17 +2,16 @@ require "rubygems"
 require "bundler/setup"
 require "mg"
 require "rake/clean"
-require "spec/rake/spectask"
+require "rspec/core/rake_task"
 require "yard"
 
-CLOBBER.include(".yardoc", "doc")
+CLOBBER.include(".yardoc", "coverage", "doc")
 MG.new("haml-coderay.gemspec")
 
 task :default => :spec
 
-Spec::Rake::SpecTask.new :spec do |t|
-  t.libs       = %w(lib spec)
-  t.spec_files = FileList["spec/*_spec.rb"]
+RSpec::Core::RakeTask.new :spec do |t|
+  t.pattern = "spec/**/*_spec.rb"
   if RUBY_VERSION.to_f == 1.8
     t.rcov      = true
     t.rcov_opts = %w(-x ^/,spec -t --sort coverage)
