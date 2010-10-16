@@ -8,6 +8,14 @@ describe Haml::Filters::CodeRay do
   its(:encoder) { should == :div }
   its(:encoder_options) { should == {} }
 
+  describe :ENCODER do
+    specify { Haml::Filters::CodeRay::ENCODER.should be :div }
+  end
+
+  describe :ENCODER_OPTIONS do
+    specify { Haml::Filters::CodeRay::ENCODER.should be {} }
+  end
+
   describe :VERSION do
     let(:version) { Haml::Filters::CodeRay::VERSION }
     specify { version.should match /\A\d+\.\d+\.\d+\z/ }

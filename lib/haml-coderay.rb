@@ -19,19 +19,21 @@ module Haml::Filters::CodeRay
   include Haml::Filters::Base
   lazy_require "coderay"
 
+  ENCODER = :div
+  ENCODER_OPTIONS = {}
   VERSION = File.read(File.expand_path("../../VERSION", __FILE__)).chomp
 
   # Encoder (_default_: `:div`).
   #
   # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
   attr_accessor :encoder
-  self.encoder ||= :div
+  self.encoder ||= ENCODER
 
   # Encoder options (_default_: `{}`).
   #
   # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
   attr_accessor :encoder_options
-  self.encoder_options ||= {}
+  self.encoder_options ||= ENCODER_OPTIONS
 
   # Prepares the text for passing to `::CodeRay.scan`.
   #

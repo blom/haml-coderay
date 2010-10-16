@@ -1,13 +1,11 @@
 require "haml-coderay"
 require "rspec"
 
-$HC_ENCODER         ||= Haml::Filters::CodeRay.encoder
-$HC_ENCODER_OPTIONS ||= Haml::Filters::CodeRay.encoder_options
-
 RSpec.configure do |config|
   config.before :each do
-    Haml::Filters::CodeRay.encoder         = $HC_ENCODER
-    Haml::Filters::CodeRay.encoder_options = $HC_ENCODER_OPTIONS
+    Haml::Filters::CodeRay.encoder = Haml::Filters::CodeRay::ENCODER
+    Haml::Filters::CodeRay.encoder_options =
+      Haml::Filters::CodeRay::ENCODER_OPTIONS
   end
 end
 
