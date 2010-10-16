@@ -19,8 +19,7 @@ module Haml::Filters::CodeRay
   include Haml::Filters::Base
   lazy_require "coderay"
 
-  const_defined?(:VERSION) || VERSION =
-    File.read(File.expand_path("../../VERSION", __FILE__)).chomp
+  VERSION = File.read(File.expand_path("../../VERSION", __FILE__)).chomp
 
   # Encoder (_default_: `:div`).
   #
