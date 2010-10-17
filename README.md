@@ -2,7 +2,7 @@ haml-coderay
 ============
 
 * [Homepage](http://github.com/blom/haml-coderay)
-* [Documentation](http://rdoc.info/projects/blom/haml-coderay)
+* [Documentation](http://rdoc.info/github/blom/haml-coderay)
 
 [CodeRay][1] filter for [Haml][2]. Specify which [language][3] to highlight
 with a shebang followed by the language name:
