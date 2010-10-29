@@ -1,3 +1,5 @@
+# coding: utf-8
+
 Gem::Specification.new do |spec|
   spec.name        = "haml-coderay"
   spec.version     = File.read(File.expand_path("../VERSION", __FILE__)).chomp
