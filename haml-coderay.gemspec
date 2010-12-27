@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.files       = Dir["lib/*.rb", "[A-Z][A-Z]*"]
   spec.author      = "Ørjan Blom"
   spec.email       = "blom@blom.tv"
-  spec.homepage    = "http://github.com/blom/haml-coderay"
+  spec.homepage    = "https://github.com/blom/haml-coderay"
 
   spec.add_dependency "coderay"
   spec.add_dependency "haml"
