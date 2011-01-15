@@ -3,8 +3,8 @@ require "spec_helper"
 Haml::Filters::CodeRay.send(:resolve_lazy_requires)
 
 describe Haml::Filters::CodeRay do
-  subject { Haml::Filters::CodeRay }
   it_should_behave_like "haml-coderay filters"
+
   its(:encoder) { should == :div }
   its(:encoder_options) { should == {} }
 
@@ -53,7 +53,6 @@ describe Haml::Filters::CodeRay do
 end
 
 describe Haml::Filters::CodeRay_raw do
-  subject { Haml::Filters::CodeRay_raw }
   it_should_behave_like "haml-coderay filters"
 
   it 'should act like CodeRay but without the need to escape #{}' do
@@ -64,7 +63,6 @@ describe Haml::Filters::CodeRay_raw do
 end
 
 describe Haml::Filters do
-  subject { Haml::Filters }
   its(:defined) { should include "coderay" }
   its(:defined) { should include "coderay_raw" }
 
