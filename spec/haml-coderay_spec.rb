@@ -38,8 +38,8 @@ describe Haml::Filters::CodeRay do
   end
 
   describe :render do
-    context 'given "#!xyz\nfoobar\n"' do
-      subject { Haml::Filters::CodeRay.render("#!xyz\nfoobar\n") }
+    context 'given "#!text\nfoobar\n"' do
+      subject { Haml::Filters::CodeRay.render("#!text\nfoobar\n") }
       specify { should include "foobar\n" }
     end
   end
@@ -80,11 +80,6 @@ end
 describe Haml::Engine do
   context "valid language specifier" do
     subject { Haml::Engine.new(":coderay\n #!xml\n .").render }
-    specify { should be_a String }
-  end
-
-  context "valid language specifier with nonexistent language" do
-    subject { Haml::Engine.new(":coderay\n #!nonexistent\n .").render }
     specify { should be_a String }
   end
 
