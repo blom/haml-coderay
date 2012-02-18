@@ -1,3 +1,8 @@
+if ENV["SIMPLECOV"]
+  require "simplecov"
+  SimpleCov.start { add_filter "spec" }
+end
+
 require File.expand_path("../../lib/haml-coderay", __FILE__)
 require "rspec"
 
