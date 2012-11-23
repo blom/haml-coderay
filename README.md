@@ -1,6 +1,8 @@
 haml-coderay
 ============
 
+[![Build Status](https://travis-ci.org/blom/haml-coderay.png)](https://travis-ci.org/blom/haml-coderay)
+
 * [Homepage](https://github.com/blom/haml-coderay)
 * [Documentation](http://rdoc.info/gems/haml-coderay)
 
