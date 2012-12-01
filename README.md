@@ -31,5 +31,5 @@ Installation
 
 [1]: http://coderay.rubychan.de/
 [2]: http://haml-lang.com/
-[3]: http://coderay.rubychan.de/doc/classes/CodeRay/Scanners.html
-[4]: http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
+[3]: http://rdoc.info/gems/coderay/CodeRay/Scanners
+[4]: http://rdoc.info/gems/coderay/CodeRay/Encoders
