@@ -13,8 +13,8 @@ require "haml"
 #     end
 #
 # @see Haml::Filters::CodeRay_raw
-# @see http://haml-lang.com/docs/yardoc/Haml/Filters.html
-# @see http://coderay.rubychan.de/doc/classes/CodeRay/Scanners.html
+# @see http://rubydoc.info/gems/haml/Haml/Filters
+# @see http://rubydoc.info/gems/coderay/CodeRay/Scanners
 module Haml::Filters::CodeRay
   include Haml::Filters::Base
   lazy_require "coderay"
@@ -25,13 +25,13 @@ module Haml::Filters::CodeRay
 
   # Encoder (_default_: {ENCODER}).
   #
-  # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
+  # @see http://rubydoc.info/gems/coderay/CodeRay/Encoders
   attr_accessor :encoder
   self.encoder ||= ENCODER
 
   # Encoder options (_default_: {ENCODER_OPTIONS}).
   #
-  # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
+  # @see http://rubydoc.info/gems/coderay/CodeRay/Encoders
   attr_accessor :encoder_options
   self.encoder_options ||= ENCODER_OPTIONS
 
@@ -46,7 +46,7 @@ module Haml::Filters::CodeRay
   # @param [String] text text to render
   # @return [String] rendered text
   #
-  # @see http://coderay.rubychan.de/doc/classes/CodeRay.html#M000008
+  # @see http://rubydoc.info/gems/coderay/CodeRay.scan
   def render(text)
     ::CodeRay.scan(*prepare(text)).send(encoder, encoder_options)
   end

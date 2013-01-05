@@ -4,7 +4,7 @@ haml-coderay
 [![Build Status](https://secure.travis-ci.org/blom/haml-coderay.png)](https://travis-ci.org/blom/haml-coderay)
 
 * [Homepage](https://github.com/blom/haml-coderay)
-* [Documentation](http://rdoc.info/gems/haml-coderay)
+* [Documentation](http://rubydoc.info/gems/haml-coderay)
 
 [CodeRay][1] filter for [Haml][2]. Specify which [language][3] to highlight
 with a shebang followed by the language name:
@@ -30,6 +30,6 @@ Installation
     gem install haml-coderay
 
 [1]: http://coderay.rubychan.de/
-[2]: http://haml-lang.com/
-[3]: http://rdoc.info/gems/coderay/CodeRay/Scanners
-[4]: http://rdoc.info/gems/coderay/CodeRay/Encoders
+[2]: http://haml.info/
+[3]: http://rubydoc.info/gems/coderay/CodeRay/Scanners
+[4]: http://rubydoc.info/gems/coderay/CodeRay/Encoders
