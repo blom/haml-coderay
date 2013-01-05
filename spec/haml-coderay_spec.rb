@@ -13,7 +13,7 @@ describe Haml::Filters::CodeRay do
   end
 
   describe :ENCODER_OPTIONS do
-    specify { Haml::Filters::CodeRay::ENCODER.should be {} }
+    specify { Haml::Filters::CodeRay::ENCODER_OPTIONS.should == {} }
   end
 
   describe :VERSION do
