@@ -5,8 +5,8 @@ Haml::Filters::CodeRay.send(:resolve_lazy_requires)
 describe Haml::Filters::CodeRay do
   it_should_behave_like "haml-coderay filters"
 
-  its(:encoder) { should == :div }
-  its(:encoder_options) { should == {} }
+  its(:encoder) { should == Haml::Filters::CodeRay::ENCODER }
+  its(:encoder_options) { should == Haml::Filters::CodeRay::ENCODER_OPTIONS }
 
   describe :ENCODER do
     specify { Haml::Filters::CodeRay::ENCODER.should be :div }
