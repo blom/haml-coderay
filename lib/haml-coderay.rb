@@ -23,13 +23,13 @@ module Haml::Filters::CodeRay
   ENCODER_OPTIONS = {}
   VERSION = File.read(File.expand_path("../../VERSION", __FILE__)).chomp
 
-  # Encoder (_default_: `:div`).
+  # Encoder (_default_: {ENCODER}).
   #
   # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
   attr_accessor :encoder
   self.encoder ||= ENCODER
 
-  # Encoder options (_default_: `{}`).
+  # Encoder options (_default_: {ENCODER_OPTIONS}).
   #
   # @see http://coderay.rubychan.de/doc/classes/CodeRay/Encoders.html
   attr_accessor :encoder_options
