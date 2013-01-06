@@ -14,7 +14,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "haml"
 
   spec.add_development_dependency "kramdown"
-  spec.add_development_dependency "mg"
   spec.add_development_dependency "rspec", "~> 2"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "yard"

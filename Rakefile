@@ -1,12 +1,10 @@
 require "rubygems"
 require "bundler/setup"
-require "mg"
 require "rake/clean"
 require "rspec/core/rake_task"
 require "yard"
 
 CLOBBER.include(".yardoc", "coverage", "doc")
-MG.new("haml-coderay.gemspec")
 
 task :default => :spec
 
