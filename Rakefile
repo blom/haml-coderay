@@ -4,7 +4,7 @@ require "rake/clean"
 require "rspec/core/rake_task"
 require "yard"
 
-CLOBBER.include(".yardoc", "coverage", "doc")
+CLOBBER.include %w(.rbx .yardoc coverage doc)
 
 task :default => :spec
 
