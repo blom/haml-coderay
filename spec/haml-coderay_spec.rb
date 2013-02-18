@@ -1,7 +1,5 @@
 require "spec_helper"
 
-Haml::Filters::CodeRay.send(:resolve_lazy_requires)
-
 describe Haml::Filters::CodeRay do
   it_should_behave_like "haml-coderay filters"
 

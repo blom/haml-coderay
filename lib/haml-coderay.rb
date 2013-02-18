@@ -1,3 +1,4 @@
+require "coderay"
 require "haml"
 
 # CodeRay filter for Haml. Specify which language to highlight with a shebang
@@ -17,7 +18,6 @@ require "haml"
 # @see http://rubydoc.info/gems/coderay/CodeRay/Scanners
 module Haml::Filters::CodeRay
   include Haml::Filters::Base
-  lazy_require "coderay"
 
   ENCODER = :div
   ENCODER_OPTIONS = {}
@@ -66,7 +66,6 @@ end
 # @see Haml::Filters::CodeRay
 module Haml::Filters::CodeRay_raw
   include Haml::Filters::Base
-  lazy_require "coderay"
 
   def compile(precompiler, text)
     text = Haml::Helpers::find_and_preserve(
