@@ -2,6 +2,7 @@ haml-coderay
 ============
 
 [![Build Status](https://travis-ci.org/blom/haml-coderay.png)](https://travis-ci.org/blom/haml-coderay)
+[![Gem Version](https://badge.fury.io/rb/haml-coderay.png)](http://badge.fury.io/rb/haml-coderay)
 
 * [Homepage](https://github.com/blom/haml-coderay)
 * [Documentation](http://rubydoc.info/gems/haml-coderay)
