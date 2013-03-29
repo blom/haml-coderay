@@ -19,11 +19,20 @@ with a shebang followed by the language name:
 
 Use `:coderay_raw` if you want to disable `#{}` interpolation.
 
+Encoder
+-------
+
 The default [encoder][4] and encoder options are `:div` and `{}`, respectively,
 and they can be altered through:
 
     Haml::Filters::CodeRay.encoder
     Haml::Filters::CodeRay.encoder_options
+
+For example, if you want to provide your own styling instead of the default
+inline styling:
+
+    Haml::Filters::CodeRay.encoder         = :div
+    Haml::Filters::CodeRay.encoder_options = { :css => :class }
 
 Installation
 ------------
