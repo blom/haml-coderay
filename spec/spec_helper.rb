@@ -12,6 +12,7 @@ RSpec.configure do |config|
     Haml::Filters::CodeRay.encoder_options =
       Haml::Filters::CodeRay::ENCODER_OPTIONS
   end
+  config.order = :random
 end
 
 RSpec::Matchers.define :include_module do |_module|
