@@ -40,7 +40,7 @@ module Haml::Filters::CodeRay
   # @param [String] text
   # @return [Array<String, Symbol>] code and language
   def prepare(text)
-    [ text.sub(/\A\s*#!(\S+)\s*\n+/, ""), $1.downcase.to_sym ]
+    [text.sub(/\A\s*#!(\S+)\s*\n+/, ""), $1.downcase.to_sym]
   end
 
   # @param [String] text text to render
@@ -68,7 +68,7 @@ module Haml::Filters::CodeRay_raw
   include Haml::Filters::Base
 
   def compile(precompiler, text)
-    text = Haml::Helpers::find_and_preserve(
+    text = Haml::Helpers.find_and_preserve(
       Haml::Filters::CodeRay.render(text).rstrip,
       precompiler.options[:preserve])
     precompiler.send(:push_text, text)
