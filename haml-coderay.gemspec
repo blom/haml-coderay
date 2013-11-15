@@ -5,6 +5,7 @@ Gem::Specification.new do |spec|
   spec.version     = File.read(File.expand_path("../VERSION", __FILE__)).chomp
   spec.summary     = "CodeRay filter for Haml"
   spec.description = "Adds a CodeRay syntax highlighting filter to Haml"
+  spec.license     = "ISC"
   spec.files       = Dir["lib/*.rb", "[A-Z][A-Z]*"]
   spec.author      = "Ørjan Blom"
   spec.email       = "blom@blom.tv"
