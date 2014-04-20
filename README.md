@@ -1,8 +1,11 @@
 haml-coderay
 ============
 
-[![Build Status](https://travis-ci.org/blom/haml-coderay.png)](https://travis-ci.org/blom/haml-coderay)
-[![Gem Version](https://badge.fury.io/rb/haml-coderay.png)](http://badge.fury.io/rb/haml-coderay)
+[![Build Status](http://img.shields.io/travis/blom/haml-coderay.svg)][travis]
+[![Gem Version](http://img.shields.io/gem/v/haml-coderay.svg)][gem]
+
+[travis]: https://travis-ci.org/blom/haml-coderay
+[gem]: http://rubygems.org/gems/haml-coderay
 
 * [Homepage](https://github.com/blom/haml-coderay)
 * [Documentation](http://rubydoc.info/gems/haml-coderay)
